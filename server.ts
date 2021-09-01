@@ -10,11 +10,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //Connect to MongoDB
-mongoose
-  .connect(mongoURI)
-  //   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected'))
-  .catch((err: any) => console.log(err));
+const connectDB = async () => {
+  try {
+    await mongoose.connect(mongoURI);
+    console.log('MongoDB Connected');
+  } catch (err: any) {
+    console.log(err.message);
+    process.exit(1);
+  }
+};
+
+connectDB();
 
 //Check Production Mode
 if (process.env.NODE_ENV === 'production') {
