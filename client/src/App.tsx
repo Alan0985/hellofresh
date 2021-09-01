@@ -1,11 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import { routes } from './routes';
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
-      <h1>Hello Fresh</h1>
-    </div>
+    <Layout>
+      <Router>
+        <Switch>
+          {routes.map((route, index) => (
+            <Route
+              exact
+              key={index}
+              path={route.path}
+              component={route.component}
+            />
+          ))}
+        </Switch>
+      </Router>
+    </Layout>
   );
-}
+};
 
 export default App;
