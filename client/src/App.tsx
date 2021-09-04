@@ -1,24 +1,29 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Layout from './components/layout/Layout';
+import Header from './components/layout/Header/Header';
+import Footer from './components/layout/Footer/Footer';
 import { routes } from './routes';
 
 const App = () => {
   return (
-    <Layout>
-      <Router>
-        <Switch>
-          {routes.map((route, index) => (
-            <Route
-              exact
-              key={index}
-              path={route.path}
-              component={route.component}
-            />
-          ))}
-        </Switch>
-      </Router>
-    </Layout>
+    <Router>
+      <Switch>
+        <>
+          <Header />
+          <main>
+            {routes.map((route, index) => (
+              <Route
+                exact
+                key={index}
+                path={route.path}
+                component={route.component}
+              />
+            ))}
+            <Footer />
+          </main>
+        </>
+      </Switch>
+    </Router>
   );
 };
 
