@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { withStyles, WithStyles } from '@material-ui/core';
 
+import Hello_Fresh_Logo from '../../../assets/images/Hello_Fresh_Logo.png';
+
 import HeaderStyle from './HeaderStyle';
 
 interface Props extends WithStyles {}
@@ -10,36 +12,38 @@ const Header = (props: Props) => {
   const { classes } = props;
   return (
     <nav className={classes.header}>
-      <ul className='navbar-nav'>
-        <li className='nav-item'>
-          <NavLink exact className='' to='/'>
-            <p>Home</p>
-          </NavLink>
-        </li>
-        <li className='nav-item'>
-          <NavLink exact className='' to='/explore'>
-            <p>About Us</p>
-          </NavLink>
-        </li>
-        <li className='nav-item'>
-          <NavLink exact className='' to='/explore/membership'>
-            <p>Membership</p>
-          </NavLink>
-        </li>
-        <li className='nav-item'>
-          <NavLink exact className='' to='/explore/training'>
-            <p>Training</p>
-          </NavLink>
-        </li>
-        <li className='nav-item'>
-          <NavLink exact className='' to='/explore/contact'>
-            <p>Contact</p>
-          </NavLink>
-        </li>
-      </ul>
+      <div className={classes.nav}>
+        <NavLink exact className={classes.logo} to='/'>
+          <img src={Hello_Fresh_Logo} alt='Hello_Fresh_Logo' />
+        </NavLink>
 
+        <ul className={classes.navBar}>
+          <li className={classes.navItem}>
+            <NavLink exact className='' to='/explore'>
+              <p>Our Plans</p>
+            </NavLink>
+          </li>
+          <li className={classes.navItem}>
+            <NavLink exact className='' to='/explore/membership'>
+              <p>How It Works</p>
+            </NavLink>
+          </li>
+          <li className={classes.navItem}>
+            <NavLink exact className='' to='/explore/training'>
+              <p>Our Recipes</p>
+            </NavLink>
+          </li>
+          <li className={classes.navItem}>
+            <NavLink exact className='' to='/explore/contact'>
+              <p>COVID-19 Updates</p>
+            </NavLink>
+          </li>
+        </ul>
+      </div>
       <div className='login'>
-        <a href='#'>Log in</a>
+        <NavLink exact className='' to='#'>
+          Log in
+        </NavLink>
       </div>
     </nav>
   );

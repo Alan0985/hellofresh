@@ -10,7 +10,7 @@ const App = () => {
       <Switch>
         <>
           <Header />
-          <main>
+          {/* <main>
             {routes.map((route, index) => (
               <Route
                 exact
@@ -20,7 +20,7 @@ const App = () => {
               />
             ))}
             <Footer />
-          </main>
+          </main> */}
         </>
       </Switch>
     </Router>
