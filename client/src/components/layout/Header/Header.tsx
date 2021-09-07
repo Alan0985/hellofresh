@@ -40,8 +40,8 @@ const Header = (props: Props) => {
           </li>
         </ul>
       </div>
-      <div className='login'>
-        <NavLink exact className='' to='#'>
+      <div className={classes.login}>
+        <NavLink exact className='' to='/login'>
           Log in
         </NavLink>
       </div>

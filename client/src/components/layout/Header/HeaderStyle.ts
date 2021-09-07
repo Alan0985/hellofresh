@@ -15,6 +15,7 @@ const HeaderStyle = (theme: Theme) =>
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
+      boxShadow: '0 2px 4px rgb(36 36 36 / 15%)',
     },
 
     nav: {
@@ -47,10 +48,33 @@ const HeaderStyle = (theme: Theme) =>
         lineHeight: '60px',
       },
 
-      '&:hover': { color: '#067A46', backgroundColor: '#E4FABF' },
-      '& active': {
+      '&:hover': {
         color: '#067A46',
         backgroundColor: '#E4FABF',
+        fontWeight: '500',
+      },
+      '& active': {
+        color: '#067A46',
+        fontWeight: '500',
+        backgroundColor: '#E4FABF',
+      },
+    },
+
+    login: {
+      width: '100px',
+      height: '40px',
+      border: '1px solid #067A46',
+      borderRadius: '4px',
+      marginRight: '20px',
+      '&:hover': {
+        backgroundColor: '#E4FABF',
+      },
+
+      '& a': {
+        fontSize: '16px',
+        height: '40px',
+        lineHeight: '38px',
+        color: '#067A46',
       },
     },
   });

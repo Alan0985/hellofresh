@@ -25,4 +25,5 @@ a {
   display: block;
   text-decoration: none;
   text-align: center;
+  cursor: 'pointer';
 }
